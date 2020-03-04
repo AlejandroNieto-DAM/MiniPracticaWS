@@ -26,6 +26,33 @@ public interface WSPractica {
 
     /**
      * 
+     * @param numero1
+     * @param numero2
+     * @param numero3
+     * @param numero4
+     * @param numero5
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "ordenarNumeros", targetNamespace = "http://WSPractica/", className = "wspractica.OrdenarNumeros")
+    @ResponseWrapper(localName = "ordenarNumerosResponse", targetNamespace = "http://WSPractica/", className = "wspractica.OrdenarNumerosResponse")
+    @Action(input = "http://WSPractica/WSPractica/ordenarNumerosRequest", output = "http://WSPractica/WSPractica/ordenarNumerosResponse")
+    public String ordenarNumeros(
+        @WebParam(name = "numero1", targetNamespace = "")
+        int numero1,
+        @WebParam(name = "numero2", targetNamespace = "")
+        int numero2,
+        @WebParam(name = "numero3", targetNamespace = "")
+        int numero3,
+        @WebParam(name = "numero4", targetNamespace = "")
+        int numero4,
+        @WebParam(name = "numero5", targetNamespace = "")
+        int numero5);
+
+    /**
+     * 
      * @param passwd
      * @param login
      * @return
@@ -41,6 +68,27 @@ public interface WSPractica {
         String login,
         @WebParam(name = "passwd", targetNamespace = "")
         String passwd);
+
+    /**
+     * 
+     * @param segundoNumero
+     * @param primerNumero
+     * @param operacion
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "calculadora", targetNamespace = "http://WSPractica/", className = "wspractica.Calculadora")
+    @ResponseWrapper(localName = "calculadoraResponse", targetNamespace = "http://WSPractica/", className = "wspractica.CalculadoraResponse")
+    @Action(input = "http://WSPractica/WSPractica/calculadoraRequest", output = "http://WSPractica/WSPractica/calculadoraResponse")
+    public String calculadora(
+        @WebParam(name = "primerNumero", targetNamespace = "")
+        int primerNumero,
+        @WebParam(name = "segundoNumero", targetNamespace = "")
+        int segundoNumero,
+        @WebParam(name = "operacion", targetNamespace = "")
+        String operacion);
 
     /**
      * 
@@ -80,26 +128,5 @@ public interface WSPractica {
         String asunto,
         @WebParam(name = "texto", targetNamespace = "")
         String texto);
-
-    /**
-     * 
-     * @param segundoNumero
-     * @param primerNumero
-     * @param operacion
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "calculadora", targetNamespace = "http://WSPractica/", className = "wspractica.Calculadora")
-    @ResponseWrapper(localName = "calculadoraResponse", targetNamespace = "http://WSPractica/", className = "wspractica.CalculadoraResponse")
-    @Action(input = "http://WSPractica/WSPractica/calculadoraRequest", output = "http://WSPractica/WSPractica/calculadoraResponse")
-    public String calculadora(
-        @WebParam(name = "primerNumero", targetNamespace = "")
-        int primerNumero,
-        @WebParam(name = "segundoNumero", targetNamespace = "")
-        int segundoNumero,
-        @WebParam(name = "operacion", targetNamespace = "")
-        String operacion);
 
 }

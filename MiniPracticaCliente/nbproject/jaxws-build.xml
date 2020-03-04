@@ -18,8 +18,8 @@
     </target>
     <target name="wsimport-client-WSPractica" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/WSPractica"/>
-        <property name="wsdl-WSPractica" location="xml-resources/web-service-references/WSPractica/wsdl/localhost_8080/WebApplication3/WSPractica.wsdl"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSPractica" destdir="${build.generated.dir}/jax-wsCache/WSPractica" wsdl="${wsdl-WSPractica}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WebApplication3/WSPractica?wsdl" xnocompile="true" xendorsed="true">
+        <property name="wsdl-WSPractica" location="xml-resources/web-service-references/WSPractica/wsdl/localhost_8080/PracticaWS/WSPractica.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSPractica" destdir="${build.generated.dir}/jax-wsCache/WSPractica" wsdl="${wsdl-WSPractica}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/PracticaWS/WSPractica?wsdl" xnocompile="true" xendorsed="true">
             <depends file="${wsdl-WSPractica}"/>
             <produces dir="${build.generated.dir}/jax-wsCache/WSPractica"/>
         </wsimport>

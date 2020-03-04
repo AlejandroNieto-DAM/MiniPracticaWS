@@ -30,6 +30,8 @@ public class ObjectFactory {
     private final static QName _SendEmail_QNAME = new QName("http://WSPractica/", "sendEmail");
     private final static QName _Calculadora_QNAME = new QName("http://WSPractica/", "calculadora");
     private final static QName _CalculadoraResponse_QNAME = new QName("http://WSPractica/", "calculadoraResponse");
+    private final static QName _OrdenarNumeros_QNAME = new QName("http://WSPractica/", "ordenarNumeros");
+    private final static QName _OrdenarNumerosResponse_QNAME = new QName("http://WSPractica/", "ordenarNumerosResponse");
     private final static QName _LoginAccesResponse_QNAME = new QName("http://WSPractica/", "loginAccesResponse");
     private final static QName _Hello_QNAME = new QName("http://WSPractica/", "hello");
 
@@ -89,6 +91,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link OrdenarNumerosResponse }
+     * 
+     */
+    public OrdenarNumerosResponse createOrdenarNumerosResponse() {
+        return new OrdenarNumerosResponse();
+    }
+
+    /**
      * Create an instance of {@link Calculadora }
      * 
      */
@@ -102,6 +112,14 @@ public class ObjectFactory {
      */
     public CalculadoraResponse createCalculadoraResponse() {
         return new CalculadoraResponse();
+    }
+
+    /**
+     * Create an instance of {@link OrdenarNumeros }
+     * 
+     */
+    public OrdenarNumeros createOrdenarNumeros() {
+        return new OrdenarNumeros();
     }
 
     /**
@@ -156,6 +174,24 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://WSPractica/", name = "calculadoraResponse")
     public JAXBElement<CalculadoraResponse> createCalculadoraResponse(CalculadoraResponse value) {
         return new JAXBElement<CalculadoraResponse>(_CalculadoraResponse_QNAME, CalculadoraResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link OrdenarNumeros }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://WSPractica/", name = "ordenarNumeros")
+    public JAXBElement<OrdenarNumeros> createOrdenarNumeros(OrdenarNumeros value) {
+        return new JAXBElement<OrdenarNumeros>(_OrdenarNumeros_QNAME, OrdenarNumeros.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link OrdenarNumerosResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://WSPractica/", name = "ordenarNumerosResponse")
+    public JAXBElement<OrdenarNumerosResponse> createOrdenarNumerosResponse(OrdenarNumerosResponse value) {
+        return new JAXBElement<OrdenarNumerosResponse>(_OrdenarNumerosResponse_QNAME, OrdenarNumerosResponse.class, null, value);
     }
 
     /**

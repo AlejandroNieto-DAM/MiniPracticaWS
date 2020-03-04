@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://WSPractica/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://WSPractica/">
+
+<xs:element name="calculadora" type="tns:calculadora" />
+
+<xs:element name="calculadoraResponse" type="tns:calculadoraResponse" />
+
+<xs:element name="hello" type="tns:hello" />
+
+<xs:element name="helloResponse" type="tns:helloResponse" />
+
+<xs:element name="loginAcces" type="tns:loginAcces" />
+
+<xs:element name="loginAccesResponse" type="tns:loginAccesResponse" />
+
+<xs:element name="ordenarNumeros" type="tns:ordenarNumeros" />
+
+<xs:element name="ordenarNumerosResponse" type="tns:ordenarNumerosResponse" />
+
+<xs:element name="sendEmail" type="tns:sendEmail" />
+
+<xs:element name="sendEmailResponse" type="tns:sendEmailResponse" />
+
+<xs:complexType name="loginAcces">
+<xs:sequence>
+<xs:element name="login" type="xs:string" minOccurs="0" />
+<xs:element name="passwd" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="loginAccesResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="sendEmail">
+<xs:sequence>
+<xs:element name="from" type="xs:string" minOccurs="0" />
+<xs:element name="to" type="xs:string" minOccurs="0" />
+<xs:element name="asunto" type="xs:string" minOccurs="0" />
+<xs:element name="texto" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="sendEmailResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="hello">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="helloResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ordenarNumeros">
+<xs:sequence>
+<xs:element name="numero1" type="xs:int" />
+<xs:element name="numero2" type="xs:int" />
+<xs:element name="numero3" type="xs:int" />
+<xs:element name="numero4" type="xs:int" />
+<xs:element name="numero5" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ordenarNumerosResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="calculadora">
+<xs:sequence>
+<xs:element name="primerNumero" type="xs:int" />
+<xs:element name="segundoNumero" type="xs:int" />
+<xs:element name="operacion" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="calculadoraResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

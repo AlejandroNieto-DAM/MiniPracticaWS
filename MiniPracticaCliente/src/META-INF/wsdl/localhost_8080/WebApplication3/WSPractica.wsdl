@@ -4,11 +4,23 @@
 <xsd:import namespace="http://WSPractica/" schemaLocation="http://localhost:8080/WebApplication3/WSPractica?xsd=1" />
 </xsd:schema>
 </types>
+<message name="ordenarNumeros">
+<part name="parameters" element="tns:ordenarNumeros" />
+</message>
+<message name="ordenarNumerosResponse">
+<part name="parameters" element="tns:ordenarNumerosResponse" />
+</message>
 <message name="loginAcces">
 <part name="parameters" element="tns:loginAcces" />
 </message>
 <message name="loginAccesResponse">
 <part name="parameters" element="tns:loginAccesResponse" />
+</message>
+<message name="calculadora">
+<part name="parameters" element="tns:calculadora" />
+</message>
+<message name="calculadoraResponse">
+<part name="parameters" element="tns:calculadoraResponse" />
 </message>
 <message name="hello">
 <part name="parameters" element="tns:hello" />
@@ -22,16 +34,18 @@
 <message name="sendEmailResponse">
 <part name="parameters" element="tns:sendEmailResponse" />
 </message>
-<message name="calculadora">
-<part name="parameters" element="tns:calculadora" />
-</message>
-<message name="calculadoraResponse">
-<part name="parameters" element="tns:calculadoraResponse" />
-</message>
 <portType name="WSPractica">
+<operation name="ordenarNumeros">
+<input wsam:Action="http://WSPractica/WSPractica/ordenarNumerosRequest" message="tns:ordenarNumeros" />
+<output wsam:Action="http://WSPractica/WSPractica/ordenarNumerosResponse" message="tns:ordenarNumerosResponse" />
+</operation>
 <operation name="loginAcces">
 <input wsam:Action="http://WSPractica/WSPractica/loginAccesRequest" message="tns:loginAcces" />
 <output wsam:Action="http://WSPractica/WSPractica/loginAccesResponse" message="tns:loginAccesResponse" />
+</operation>
+<operation name="calculadora">
+<input wsam:Action="http://WSPractica/WSPractica/calculadoraRequest" message="tns:calculadora" />
+<output wsam:Action="http://WSPractica/WSPractica/calculadoraResponse" message="tns:calculadoraResponse" />
 </operation>
 <operation name="hello">
 <input wsam:Action="http://WSPractica/WSPractica/helloRequest" message="tns:hello" />
@@ -41,14 +55,28 @@
 <input wsam:Action="http://WSPractica/WSPractica/sendEmailRequest" message="tns:sendEmail" />
 <output wsam:Action="http://WSPractica/WSPractica/sendEmailResponse" message="tns:sendEmailResponse" />
 </operation>
-<operation name="calculadora">
-<input wsam:Action="http://WSPractica/WSPractica/calculadoraRequest" message="tns:calculadora" />
-<output wsam:Action="http://WSPractica/WSPractica/calculadoraResponse" message="tns:calculadoraResponse" />
-</operation>
 </portType>
 <binding name="WSPracticaPortBinding" type="tns:WSPractica">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+<operation name="ordenarNumeros">
+<soap:operation soapAction="" />
+<input>
+<soap:body use="literal" />
+</input>
+<output>
+<soap:body use="literal" />
+</output>
+</operation>
 <operation name="loginAcces">
+<soap:operation soapAction="" />
+<input>
+<soap:body use="literal" />
+</input>
+<output>
+<soap:body use="literal" />
+</output>
+</operation>
+<operation name="calculadora">
 <soap:operation soapAction="" />
 <input>
 <soap:body use="literal" />
@@ -67,15 +95,6 @@
 </output>
 </operation>
 <operation name="sendEmail">
-<soap:operation soapAction="" />
-<input>
-<soap:body use="literal" />
-</input>
-<output>
-<soap:body use="literal" />
-</output>
-</operation>
-<operation name="calculadora">
 <soap:operation soapAction="" />
 <input>
 <soap:body use="literal" />

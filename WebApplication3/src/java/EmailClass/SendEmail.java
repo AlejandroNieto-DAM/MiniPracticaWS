@@ -18,8 +18,9 @@ import java.util.Properties;
  */
 public class SendEmail {
     
-    public static void sendEmail(String from, String to,  String asunto, String texto) {
+    public static String sendEmail(String from, String to,  String asunto, String texto) {
 
+        String outputLine = "";
         final String username = from;
         final String password = "pepino1234_";
 
@@ -49,10 +50,13 @@ public class SendEmail {
 
             Transport.send(message);
 
-            System.out.println("Done");
+            outputLine = "Done";
 
         } catch (MessagingException e) {
             e.printStackTrace();
+            outputLine = "Error";
         }
+        
+        return outputLine;
     }
 }

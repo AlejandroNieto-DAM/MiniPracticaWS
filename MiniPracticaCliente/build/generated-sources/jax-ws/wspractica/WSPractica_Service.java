@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "WSPractica", targetNamespace = "http://WSPractica/", wsdlLocation = "http://localhost:8080/WebApplication3/WSPractica?wsdl")
+@WebServiceClient(name = "WSPractica", targetNamespace = "http://WSPractica/", wsdlLocation = "http://localhost:8080/PracticaWS/WSPractica?wsdl")
 public class WSPractica_Service
     extends Service
 {
@@ -30,7 +30,7 @@ public class WSPractica_Service
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://localhost:8080/WebApplication3/WSPractica?wsdl");
+            url = new URL("http://localhost:8080/PracticaWS/WSPractica?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }
